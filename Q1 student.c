@@ -7,19 +7,18 @@ struct student
 	char name[20];
 };
 
-void storestudent(struct student*);
+struct student storevalue(struct student);
 void main()
 {
-	struct student this;
-	storestudent(&this);
-	
-	printf("student details: \n id is: %d\n name: %s\n",this.roll, this.name);
+	struct student s1;
+	s1 = storevalue(s1);
+	printf("%d is %s",s1.roll,s1.name);
 }
 
-void storestudent(struct student*this)
+struct student storevalue(struct student t)
 {
-	printf("enter the rollno");
-	scanf("%d", &this->roll);
-	printf("enter the name");
-	scanf("%s", &this->name);
+
+	t.roll=10;
+	strcpy(t.name,"sachin");
+	return t;
 }
